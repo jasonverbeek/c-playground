@@ -1,0 +1,10 @@
+#!/bin/bash
+
+source ./GCC.conf
+
+if test -z "$GCC_MAIN"; then
+    echo "No GCC_MAIN in ./GCC.conf"
+    exit 0
+fi
+
+gcc $GCC_MAIN -o ${GCC_OUTPUT:=output.bin} ${GCC_EXTRA}
